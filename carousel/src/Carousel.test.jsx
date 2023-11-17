@@ -1,13 +1,10 @@
 import { render, fireEvent } from "@testing-library/react";
-import Carousel from "./Carousel";
+import Carousel from "./Carousel.jsx";
 import TEST_IMAGES from "./_testCommon.js";
 
-it("works when you click on the right arrow", function() {
+it("works when you click on the right arrow", function () {
   const { container } = render(
-    <Carousel
-      photos={TEST_IMAGES}
-      title="images for testing"
-    />
+    <Carousel photos={TEST_IMAGES} title="images for testing" />
   );
   // expect the first image to show, but not the second
   expect(
@@ -28,4 +25,20 @@ it("works when you click on the right arrow", function() {
   expect(
     container.querySelector('img[alt="testing image 2"]')
   ).toBeInTheDocument();
+});
+
+const carouselPhotos = TEST_IMAGES;
+const carouselTitle = "TEST-TITLE";
+
+// Smoke Test
+it("renders without crashing", () => {
+  render(<Carousel photos={carouselPhotos} title={carouselTitle} />);
+});
+
+// Snapshot Test
+it("matches snapshot", () => {
+  const { asFragment } = render(
+    <Carousel photos={carouselPhotos} title={carouselTitle} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
