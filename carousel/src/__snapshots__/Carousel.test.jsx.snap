@@ -6,14 +6,11 @@ exports[`matches snapshot 1`] = `
     class="Carousel"
   >
     <h1>
-      TEST-TITLE
+      images for testing
     </h1>
     <div
       class="Carousel-main"
     >
-      <i
-        class="bi bi-arrow-left-circle"
-      />
       <div
         class="Card"
       >

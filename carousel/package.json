@@ -12,11 +12,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "eject": "react-scripts eject"
+    "coverage": "vitest run --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
